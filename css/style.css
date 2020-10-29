@@ -15,7 +15,7 @@ body {
   outline: none;
 }
 
-.custom-box {
+.custom_box {
   max-width: 700px;
   background-color: #ffffff;
   margin: 40px auto;
@@ -23,18 +23,18 @@ body {
   border-radius: 10px;
 }
 
-.custom-box::before,
-.custom-box::after {
+.custom_box::before,
+.custom_box::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.custom-box.hide {
+.custom_box.hide {
   display: none;
 }
 
-.home-box h3 {
+.home_box h3 {
   font-size: 18px;
   color: #000000;
   font-weight: 500;
@@ -42,7 +42,7 @@ body {
   line-height: 25px;
 }
 
-.home-box p {
+.home_box p {
   font-size: 16px;
   margin-bottom: 10px;
   line-height: 22px;
@@ -50,11 +50,11 @@ body {
   font-weight: 400;
 }
 
-.home-box p span {
+.home_box p span {
   font-weight: 500;
 }
 
-.home-box .btn {
+.home_box .btn {
 }
 
 .btn {
@@ -68,15 +68,15 @@ body {
   cursor: pointer;
   display: inline-block;
 }
-.custom-box .quiz-box .question-number,
-.quiz-box .question-text,
-.quiz-box .option-container,
-.quiz-box .next-question-btn,
-.quiz-box .answers-indicator {
+.custom_box .quiz_box .question_number,
+.quiz_box .question_text,
+.quiz_box .option_container,
+.quiz_box .next_question_btn,
+.quiz_box .answers_indicator {
   width: 100%;
   flex: left;
 }
-.quiz-box .question-number {
+.quiz_box .question_number {
   font-size: 18px;
   color: #009688;
   font-weight: 600;
@@ -85,7 +85,7 @@ body {
   line-height: 25px;
 }
 
-.quiz-box .question-text {
+.quiz_box .question_text {
   font-size: 22px;
   color: #000000;
   line-height: 28px;
@@ -94,7 +94,7 @@ body {
   margin: 0;
 }
 
-.quiz-box .option-container .option {
+.quiz_box .option_container .option {
   background-color: #cccccc;
   padding: 13px 15px;
   font-size: 16px;
@@ -106,15 +106,15 @@ body {
   text-transform: capitalize;
 }
 
-.quiz-box .btn {
+.quiz_box .btn {
   margin: 15px 0;
 }
 
-.quiz-box .answers-indicator {
+.quiz_box .answers_indicator {
   border-top: 1px solid #cccccc;
 }
 
-.quiz-box .answers-indicator div {
+.quiz_box .answers_indicator div {
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -124,27 +124,27 @@ body {
   margin-top: 13px;
 }
 
-.result-box {
+.result_box {
   text-align: center;
 }
 
-.result-box.hide {
+.result_box.hide {
   display: none;
 }
 
-.result-box h1 {
+.result_box h1 {
   font-size: 36px;
   line-height: 42px;
   color: #009688;
 }
 
-.result-box table {
+.result_box table {
   width: 100%;
   border-collapse: collapse;
   margin: 30px 0;
 }
 
-.result-box table td {
+.result_box table td {
   border: 1px solid #cccccc;
   padding: 8px 15px;
   font-weight: 500;
@@ -154,6 +154,6 @@ body {
   font-size: 18px;
 }
 
-.result-box .btn {
+.result_box .btn {
   margin: 0 10px;
 }
