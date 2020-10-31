@@ -14,9 +14,18 @@ function setAvailableQuestions(){
     for(let i=0; i<totalQuestion; i++){
         availableQuestions.push(quiz[i])
     }
-    console.log(availableQuestions)
 }
 
+//set question number and question and option
+function getNewQuestion(){
+    //set question number
+    questionNumber.innerHTML = "Question " + (questionCounter + 1) + " of " + quiz.length;
+}
+
+
 window.onload = function(){
+    //first we will set all questions in availableQuestions Array
     setAvailableQuestions();
+    //second we will call getNewQuestion(); function
+    getNewQuestion();
 }
