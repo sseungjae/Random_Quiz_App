@@ -12,8 +12,9 @@ let availableQuestions = [];
 function setAvailableQuestions(){
     const totalQuestion = quiz.length;
     for(let i=0; i<totalQuestion; i++){
-        console.log(quiz[i])
+        availableQuestions.push(quiz[i])
     }
+    console.log(availableQuestions)
 }
 
 window.onload = function(){
