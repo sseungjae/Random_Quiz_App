@@ -26,7 +26,25 @@ function getNewQuestion(){
     const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
     currentQuestion = questionIndex;
     questionText.innerHTML = currentQuestion.q;
+
+    //get the position of 'questionIndex' from the availableQuestion Array
+    const index1 = availableQuestions.indexOf(questionIndex);
+
+    //remove the questionIndex from the availableQuestion Array
+    availableQuestions.splice(index1, 1);
+    
+    questionCounter++
 }
+
+function next(){
+    if(questionCounter === quiz.length){
+        console.log("quiz over");
+    }
+    else{
+        getNewQuestion();
+    }
+}
+
 
 
 window.onload = function(){
