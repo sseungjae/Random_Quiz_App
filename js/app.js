@@ -24,7 +24,8 @@ function getNewQuestion(){
     //set question text
     //get random question
     const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
-    console.log(questionIndex)
+    currentQuestion = questionIndex;
+    questionText.innerHTML = currentQuestion.q;
 }
 
 
