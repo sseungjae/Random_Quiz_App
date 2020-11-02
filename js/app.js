@@ -6,6 +6,7 @@ const optionContainer = document.querySelector(".option_container");
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
+let availableOptions = [];
 
 
 //push the questions into availableQuestions Array
@@ -30,9 +31,30 @@ function getNewQuestion(){
     //get the position of 'questionIndex' from the availableQuestion Array
     const index1 = availableQuestions.indexOf(questionIndex);
 
-    //remove the questionIndex from the availableQuestion Array
+    //remove the questionIndex from the availableQuestion Array, so that the question does not repeat
     availableQuestions.splice(index1, 1);
-    
+        //condole.log(questionIndex)
+        //console.log(availableQuestions)
+
+    //set options
+    //get the length of options 
+    const optionLen = currentQuestion.options.length
+
+    //push options into availableOptions Array
+    for(let i=0; i<optionLen; i++){
+        availableOptions.push(i)
+    }
+    //console.log(availableOptions)
+
+    //create option in in HTMLß
+    for(let i=0; i<optionLen; i++){
+        const option = document.createElement("div");
+        option.innerHTML = currentQuestion.options[i];
+        option.id = i;
+        option.className = "option";
+        optionContainer.appendChild(option)
+    }
+
     questionCounter++
 }
 
