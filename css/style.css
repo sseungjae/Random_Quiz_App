@@ -106,6 +106,8 @@ body {
   text-transform: capitalize;
   opacity: 0;
   animation: fadeIn 0.3s ease forwards;
+  position: relative;
+  overflow: hidden;
 }
 @keyframes fadeIn {
   0% {
@@ -114,6 +116,28 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+.quiz_box .option_container .option.correct::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(45, 177, 45);
+  z-index: -1;
+  animation: slideInLeft 0.5s ease forwards;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.quiz_box .option_container .option.correct::after {
 }
 
 .quiz_box .btn {

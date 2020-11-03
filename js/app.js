@@ -45,6 +45,8 @@ function getNewQuestion(){
         availableOptions.push(i)
     }
     
+    optionContainer.innerHTML ='';
+
     let animationDelay = 0.15;
     //create option in in HTMLß
     for(let i=0; i<optionLen; i++){
@@ -70,9 +72,16 @@ function getNewQuestion(){
 }
 
 //get the result of current attempt question
-function getResult(optionElement){
-    console.log(optionElement.id)
-    console.log(optionElement.innerHTML)
+function getResult(element){
+    //get the answer by comparing the id of clicked option
+    const id = parseInt(element.id);
+    if(id === currentQuestion.answer){
+        // set the green color to the correct
+        element.classList.add("correct")
+    }
+    else{
+        console.log("answer is wrong");
+    }
 }
 
 function next(){
