@@ -69,6 +69,12 @@ function getNewQuestion(){
     questionCounter++
 }
 
+//get the result of current attempt question
+function getResult(optionElement){
+    console.log(optionElement.id)
+    console.log(optionElement.innerHTML)
+}
+
 function next(){
     if(questionCounter === quiz.length){
         console.log("quiz over");
