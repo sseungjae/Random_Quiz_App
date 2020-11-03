@@ -44,8 +44,8 @@ function getNewQuestion(){
     for(let i=0; i<optionLen; i++){
         availableOptions.push(i)
     }
-    //console.log(availableOptions)
-
+    
+    let animationDelay = 0.15;
     //create option in in HTMLß
     for(let i=0; i<optionLen; i++){
         //random option
@@ -56,13 +56,14 @@ function getNewQuestion(){
 
         //remove the ' optionIndex' from the availableOptions, so that the option does not repeat
         availableOptions.splice(index2, 1);
-        console.log(optionIndex)
-        console.log(availableOptions)
         const option = document.createElement("div");
-        option.innerHTML = currentQuestion.options[i];
-        option.id = i;
+        option.innerHTML = currentQuestion.options[optionIndex];
+        option.id = optionIndex;
+        option.style.animationDelay = animationDelay + 's';
+        animationDelay = animationDelay + 0.15;
         option.className = "option";
         optionContainer.appendChild(option)
+        option.setAttribute("onclick", "getResult(this)");
     }
 
     questionCounter++
