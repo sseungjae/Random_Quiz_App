@@ -76,11 +76,23 @@ function getResult(element){
     //get the answer by comparing the id of clicked option
     const id = parseInt(element.id);
     if(id === currentQuestion.answer){
-        // set the green color to the correct
+        // set the green color to the correct option
         element.classList.add("correct")
     }
     else{
-        console.log("answer is wrong");
+        // set the red color to the incorrect option
+        element.classList.add("wrong")
+    }
+
+    unclickableOptions();
+
+}
+
+// make all the options unclickable once the user select a option(RESTART THE USER TO CHANGE THE OPTION AGAIN)
+function  unclickableOptions(){
+    const optionLen = optionContainer.children.length;
+    for(let i=0; i<optionLen; i++){
+        optionContainer.children[i].classList.add("already-answered");
     }
 }
 

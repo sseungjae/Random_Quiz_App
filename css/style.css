@@ -109,6 +109,10 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+.quiz_box .option_container .option.already-answered {
+  pointer-events: none;
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -137,7 +141,24 @@ body {
     transform: translateX(0%);
   }
 }
-.quiz_box .option_container .option.correct::after {
+
+.quiz_box .option_container .option.wrong::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(220, 65, 65);
+  z-index: -1;
+  animation: slideInLeft 0.5s ease forwards;
+}
+.quiz_box .option_container .option.wrong {
+  color: #ffffff;
+}
+
+.quiz_box .option_container .option.correct {
+  color: #ffffff;
 }
 
 .quiz_box .btn {
