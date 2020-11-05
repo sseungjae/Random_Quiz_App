@@ -2,6 +2,7 @@
 const questionNumber = document.querySelector(".question_number");
 const questionText = document.querySelector(".question_text");
 const optionContainer = document.querySelector(".option_container");
+const answersIndicatorContainer = document.querySelector(".nswers_indicator");
 
 let questionCounter = 0;
 let currentQuestion;
@@ -78,10 +79,14 @@ function getResult(element){
     if(id === currentQuestion.answer){
         // set the green color to the correct option
         element.classList.add("correct")
+        // add the indicator to correct mark
+        updateAnswerIndicator("correct");
     }
     else{
         // set the red color to the incorrect option
         element.classList.add("wrong");
+        // add the indicator to wrong mark
+        updateAnswerIndicator("wrong");
 
         //if the answer is incorrect the show the correct option by adding green color the correct option
         const optionLen = optionContainer.children.length;
@@ -104,6 +109,18 @@ function  unclickableOptions(){
     }
 }
 
+function answersIndicator(){
+    const totalQuestion = quiz.length;
+    for(let i=0; i<totalQuestion; i++){
+        const indicator = document.createElement("div");
+        answersIndicatorContainer.appendChild(indicator);
+    }
+}
+
+function updateAnswerIndicator(markType){
+    console.log(markType);
+}
+
 function next(){
     if(questionCounter === quiz.length){
         console.log("quiz over");
@@ -117,7 +134,12 @@ function next(){
 
 window.onload = function(){
     //first we will set all questions in availableQuestions Array
+    
     setAvailableQuestions();
+
     //second we will call getNewQuestion(); function
     getNewQuestion();
+
+    // to create indicator of answers
+    answersIndicator();
 }
