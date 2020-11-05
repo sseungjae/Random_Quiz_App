@@ -179,6 +179,13 @@ body {
   margin-top: 13px;
 }
 
+.quiz_box .answers_indicator div.correct {
+  background-color: green;
+}
+.quiz_box .answers_indicator div.wrong {
+  background-color: red;
+}
+
 .result_box {
   text-align: center;
 }

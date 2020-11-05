@@ -2,7 +2,7 @@
 const questionNumber = document.querySelector(".question_number");
 const questionText = document.querySelector(".question_text");
 const optionContainer = document.querySelector(".option_container");
-const answersIndicatorContainer = document.querySelector(".nswers_indicator");
+const answersIndicatorContainer = document.querySelector(".answers_indicator");
 
 let questionCounter = 0;
 let currentQuestion;
@@ -118,7 +118,7 @@ function answersIndicator(){
 }
 
 function updateAnswerIndicator(markType){
-    console.log(markType);
+    answersIndicatorContainer.children[questionCounter-1].classList.add(markType)
 }
 
 function next(){
