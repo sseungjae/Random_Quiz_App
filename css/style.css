@@ -181,9 +181,17 @@ body {
 
 .quiz_box .answers_indicator div.correct {
   background-color: green;
+  background-image: url(/img/correct.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .quiz_box .answers_indicator div.wrong {
   background-color: red;
+  background-image: url(/img/wrong.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .result_box {
