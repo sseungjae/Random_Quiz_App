@@ -3,12 +3,16 @@ const questionNumber = document.querySelector(".question_number");
 const questionText = document.querySelector(".question_text");
 const optionContainer = document.querySelector(".option_container");
 const answersIndicatorContainer = document.querySelector(".answers_indicator");
+const homeBox = document.querySelector(".home_box");
+const quizBox = document.querySelector(".quiz_box");
+const resultBox = document.querySelector(".result_box");
 
 let questionCounter = 0;
 let currentQuestion;
 let availableQuestions = [];
 let availableOptions = [];
-
+let correctAnswers = 0;
+let attempt = 0;
 
 //push the questions into availableQuestions Array
 function setAvailableQuestions(){
@@ -81,6 +85,8 @@ function getResult(element){
         element.classList.add("correct")
         // add the indicator to correct mark
         updateAnswerIndicator("correct");
+        correctAnswers++;
+        console.log("correct:" + correctAnswers)
     }
     else{
         // set the red color to the incorrect option
@@ -96,7 +102,7 @@ function getResult(element){
             }
         }
     }
-
+    attempt++;
     unclickableOptions();
 
 }
@@ -110,6 +116,7 @@ function  unclickableOptions(){
 }
 
 function answersIndicator(){
+    answersIndicatorContainer.innerHTML = '';
     const totalQuestion = quiz.length;
     for(let i=0; i<totalQuestion; i++){
         const indicator = document.createElement("div");
@@ -124,13 +131,37 @@ function updateAnswerIndicator(markType){
 function next(){
     if(questionCounter === quiz.length){
         console.log("quiz over");
+        quizOver();
     }
     else{
         getNewQuestion();
     }
 }
 
+function quizOver(){
+    // hide quiz quixBoc
+    quizBox.classList.add("hide");
 
+    //show result Box
+    resultBox.classList.remove("hide");
+    quizResult();
+}
+
+// get the quiz Result
+function quizResult(){
+    resultBox.querySelector(".total_question").innerHTML = quiz.length;
+    resultBox.querySelector(".total_attempt").innerHTML = attempt;
+    resultBox.querySelector(".total_correct").innerHTML = correctAnswers;
+    resultBox.querySelector(".total_wrong").innerHTML = attempt - correctAnswers;
+
+    const percentage = (correctAnswers/quiz.length) *100;
+    resultBox.querySelector(".percentage").innerHTML = percentage.toFixed(2) + "%";
+    resultBox.querySelector(".total_score").innerHTML = correctAnswers + " / " + quiz.length;
+}
+
+function tryAgainQuiz(){
+    
+}
 
 window.onload = function(){
     //first we will set all questions in availableQuestions Array
