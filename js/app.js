@@ -159,13 +159,40 @@ function quizResult(){
     resultBox.querySelector(".total_score").innerHTML = correctAnswers + " / " + quiz.length;
 }
 
-function tryAgainQuiz(){
-    
+function resetQuiz(){
+    questionCounter = 0;
+    correctAnswers = 0;
+    attempt = 0;
 }
 
-window.onload = function(){
+function tryAgainQuiz(){
+    // hide the resultBox
+    resultBox.classList.add("hide");
+
+    // show the quizBox
+    quizBox.classList.remove("hide");
+    resetQuiz();
+    startQuiz();
+}
+
+function goToHome(){
+    // hide result Box
+    resultBox.classList.add("hide");
+
+    // show home Box
+    homeBox.classList.remove("hide");
+    resetQuiz();
+}
+
+// ### STARTING POINT ###
+
+function startQuiz(){
+    // hide home box
+    homeBox.classList.add("hide");
+    // show quiz Box
+    quizBox.classList.remove("hide");
+
     //first we will set all questions in availableQuestions Array
-    
     setAvailableQuestions();
 
     //second we will call getNewQuestion(); function
