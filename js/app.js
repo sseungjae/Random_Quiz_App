@@ -58,10 +58,10 @@ function getNewQuestion(){
         //random option
         const optionIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];
 
-        //get the position of 'optionIndex' from the availableOptions
+        //get the position of 'optionIndex' from the availableOptions Array
         const index2 = availableOptions.indexOf(optionIndex);
 
-        //remove the ' optionIndex' from the availableOptions, so that the option does not repeat
+        //remove the ' optionIndex' from the availableOptions Array, so that the option does not repeat
         availableOptions.splice(index2, 1);
         const option = document.createElement("div");
         option.innerHTML = currentQuestion.options[optionIndex];
@@ -86,7 +86,7 @@ function getResult(element){
         // add the indicator to correct mark
         updateAnswerIndicator("correct");
         correctAnswers++;
-        console.log("correct:" + correctAnswers)
+        
     }
     else{
         // set the red color to the incorrect option
@@ -138,11 +138,11 @@ function next(){
     }
 }
 
-function quizOver(){
-    // hide quiz quixBoc
+function quizOver(){ 
+    // hide quiz quizBox
     quizBox.classList.add("hide");
 
-    //show result Box
+    // show result Box
     resultBox.classList.remove("hide");
     quizResult();
 }
@@ -200,4 +200,8 @@ function startQuiz(){
 
     // to create indicator of answers
     answersIndicator();
+}
+
+window.onload = function(){
+    homeBox.querySelector(".total_question").innerHTML = quiz.length;
 }
